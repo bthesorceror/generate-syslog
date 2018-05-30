@@ -1,0 +1,25 @@
+{
+  "name": "@bthesorceror/generate-syslog",
+  "version": "1.0.0",
+  "description": "simple tool for generating random syslog messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "bin": {
+    "generate-syslog": "./bin/cmd.js"
+  },
+  "author": "Brandon Farmer <bthesorceror@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "faker": "^4.1.0",
+    "joi": "^13.3.0",
+    "lodash": "^4.17.10",
+    "rsyslog": "^1.1.2",
+    "syslog": "^0.1.1-1",
+    "syslog-client": "^1.1.1",
+    "syslog2": "^1.0.7"
+  }
+}
