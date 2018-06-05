@@ -1,6 +1,6 @@
 {
   "name": "@bthesorceror/generate-syslog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple tool for generating random syslog messages",
   "main": "index.js",
   "scripts": {
