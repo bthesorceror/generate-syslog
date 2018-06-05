@@ -3,8 +3,8 @@ const faker = require('faker')
 const {RemoteSyslog, SEVERITY, NILVALUE, FACILITY} = require('rsyslog')
 const os = require('os')
 
-function getRandomNumber() {
-  return Math.floor(Math.random() * 10)
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * max) + 1
 }
 
 function getRandomSeverity() {
@@ -49,6 +49,10 @@ function getRandomFacility() {
   ])
 }
 
+function generateMessage() {
+  return _.times(getRandomNumber(5), faker.hacker.phrase).join(' ')
+}
+
 function post() {
   const rsyslog = new RemoteSyslog({
     target_host: '127.0.0.1',
@@ -63,10 +67,10 @@ function post() {
     console.error(err)
   })
 
-  var count = getRandomNumber()
+  var count = getRandomNumber(10)
 
   for (var i = 0; i < count; i++) {
-    rsyslog.send(getRandomSeverity(), faker.hacker.phrase(), {
+    rsyslog.send(getRandomSeverity(), generateMessage(), {
       timestamp: Date.now(),
     })
 
